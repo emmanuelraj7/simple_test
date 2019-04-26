@@ -58,7 +58,7 @@ else:
 # in half.  In addition, the validation set consists of 1000 images,
 # and the test set of 22000 images.
 
-datapath = "/valohai/inputs/"
+datapath = "/tmp/"
 (nimages_train, nimages_validation, nimages_test) = (2000, 1000, 22000)
 
 # ### Data augmentation
@@ -89,7 +89,7 @@ noopgen = ImageDataGenerator(rescale=1./255)
 # TensorBoard event file.
 
 augm_generator = datagen.flow_from_directory(
-        datapath+'train',  
+        datapath+'train',
         target_size=input_image_size,  
         batch_size=10)
 
