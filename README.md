@@ -93,7 +93,7 @@ type: string
 
 ```
 
-The **"pass-as: --epochs {v} "** in the valohai.yaml file is the **"parser.add_argument("--epochs", type=int, default=20)" ** in _**keras-dvc-cnn-simple.py**_ file .
+The **"pass-as: --epochs {v} "** in the valohai.yaml file is the **"parser.add_argument("--epochs", type=int, default=20)"** in _**keras-dvc-cnn-simple.py**_ file .
 
 ## Note: 
 
