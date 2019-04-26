@@ -15,7 +15,7 @@
 # 
 # First, the needed imports. Keras tells us which backend (Theano,
 # Tensorflow, CNTK) it will be using.
-
+import argparse
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout, Flatten, MaxPooling2D
 from keras.layers.convolutional import Conv2D 
@@ -31,6 +31,18 @@ from keras import __version__
 
 import numpy as np
 
+def get_args():
+    parser = argparse.ArgumentParser("Add parser")
+    parser.add_argument("--data_path", type=str, default="/valohai/inputs/")
+    parser.add_argument("--saved_path", type=str, default="/valohai/outputs/")
+    parser.add_argument("--log_path", type=str, default="/valohai/outputs")
+    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--workers", type=int, default=4)
+    args = parser.parse_args()
+    return args
+
+opt = get_args()
+
 print('Using Keras version:', __version__, 'backend:', K.backend())
 assert(LV(__version__) >= LV("2.0.0"))
 
@@ -41,9 +53,9 @@ if K.backend() == "tensorflow":
     import tensorflow as tf
     from keras.callbacks import TensorBoard
     import os, datetime
-    logdir = os.path.join(os.getcwd(), "logs",
+    logdir = os.path.join(opt.log_path, "logs",
                      "dvc-simple-"+datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
-    print('TensorBoard log directory:', logdir)
+    print('TensorBoard log directory:', opt.log_path)
     try:
         os.makedirs(logdir)
         callbacks = [TensorBoard(log_dir=logdir)]
@@ -58,7 +70,7 @@ else:
 # in half.  In addition, the validation set consists of 1000 images,
 # and the test set of 22000 images.
 
-datapath = "/tmp/"
+datapath = opt.data_path
 (nimages_train, nimages_validation, nimages_test) = (2000, 1000, 22000)
 
 # ### Data augmentation
@@ -163,8 +175,8 @@ print(model.summary())
 
 # ### Learning
 
-epochs = 20
-workers = 4
+epochs = opt.epochs
+workers = opt.workers
 use_multiprocessing = False
 
 print('Training for', epochs, 'epochs with', workers,
@@ -182,3 +194,4 @@ history = model.fit_generator(train_generator,
 fname = "dvc-small-cnn.h5"
 print('Saving model to', fname)
 model.save(fname)
+
