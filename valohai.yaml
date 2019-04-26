@@ -16,8 +16,8 @@
         default: swift://f8a5dbc8033343aea820c139245afe13/BDA/validation/validation-set-images.tar.gz
       - name: test 
         default: swift://f8a5dbc8033343aea820c139245afe13/BDA/test/test-set-images.tar.gz
-        
-    parameters:  
+    
+     parameters:  
     - default: 20
       description: Epochs
       name: Minibatch size
