@@ -113,21 +113,21 @@ batch_size = 25
 
 print('Train: ', end="")
 train_generator = datagen.flow_from_directory(
-        datapath+'/train',  
+        datapath+'train',
         target_size=input_image_size,
         batch_size=batch_size, 
         class_mode='binary')
 
 print('Validation: ', end="")
 validation_generator = noopgen.flow_from_directory(
-        datapath+'/validation',  
+        datapath+'validation',
         target_size=input_image_size,
         batch_size=batch_size,
         class_mode='binary')
 
 print('Test: ', end="")
 test_generator = noopgen.flow_from_directory(
-        datapath+'/test',  
+        datapath+'test',  
         target_size=input_image_size,
         batch_size=batch_size,
         class_mode='binary')
