@@ -19,34 +19,34 @@
         
     parameters:  
      - default: 20
-      description: Epochs
-      name: Minibatch size
-      pass-as: --epochs {v}
-      type: integer
+       description: Epochs
+       name: Minibatch size
+       pass-as: --epochs {v}
+       type: integer
       
      - default: 4
-      description: Number of Worker
-      name: Number of worker 
-      pass-as: --workers {v}
-      type: integer
-      
+       description: Number of Worker
+       name: Number of worker 
+       pass-as: --workers {v}
+       type: integer
+       
      - default: /tmp/
-      description: Input Path to dataset
-      name: train path 
-      pass-as: --data_path {v}
-      type: string
+       description: Input Path to dataset
+       name: train path 
+       pass-as: --data_path {v}
+       type: string
       
      - default: /valohai/outputs/
-      description: Log output
-      name:  Log output
-      pass-as: --log_path {v}
-      type: string
+       description: Log output
+       name:  Log output
+       pass-as: --log_path {v}
+       type: string
       
      - default: /valohai/outputs/
-      description: Output Path 
-      name: save path
-      pass-as: --saved_path {v}
-      type: string
-      
+       description: Output Path 
+       name: save path
+       pass-as: --saved_path {v}
+       type: string
+       
     name: Train simple 
  
