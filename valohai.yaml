@@ -4,7 +4,7 @@
       - python keras-dvc-cnn-simple.py 
     
     inputs:
-      - name: data
+      - name: train
         default: swift://f8a5dbc8033343aea820c139245afe13/BDA/train/train-set-images.tar.gz
       - name: validation
         default: swift://f8a5dbc8033343aea820c139245afe13/BDA/validation/validation-set-images.tar.gz

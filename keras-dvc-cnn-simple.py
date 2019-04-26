@@ -89,7 +89,7 @@ noopgen = ImageDataGenerator(rescale=1./255)
 # TensorBoard event file.
 
 augm_generator = datagen.flow_from_directory(
-        datapath+'/train',  
+        datapath+'train',  
         target_size=input_image_size,  
         batch_size=10)
 
@@ -127,7 +127,7 @@ validation_generator = noopgen.flow_from_directory(
 
 print('Test: ', end="")
 test_generator = noopgen.flow_from_directory(
-        datapath+'test',  
+        datapath+'test',
         target_size=input_image_size,
         batch_size=batch_size,
         class_mode='binary')
