@@ -1,4 +1,4 @@
-#Update simple model 
+# Upgrade simple model Python 
 
 ## What news? 
 1. Add Python parser to work with Valohai.yaml
@@ -29,7 +29,7 @@ tar -zxf /valohai/inputs/test/test-set-images.tar.gz -C /tmp/test/
 tar -zxf /valohai/inputs/validation/validation-set-images.tar.gz -C /tmp/validation/
 
 ```
-**Note: 
+## Note: 
 
 * The _/valohai/inputs/_ folder is read-only, you can not unzip there.
 * Our download dataset will not locate exactly in _/valohai/inputs/_ but it will be downloaded in seperated folder which the folder name is the **Name** you define in **valohai.yaml** file. See **inputs:** section in **valohai.yaml** file. 
