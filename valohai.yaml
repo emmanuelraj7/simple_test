@@ -24,6 +24,12 @@
       pass-as: --epochs {v}
       type: integer
       
+     - default: 4
+      description: Number of Worker
+      name: Number of worker 
+      pass-as: --workers {v}
+      type: integer
+      
     - default: /tmp/
       description: Input Path to dataset
       name: train path 
