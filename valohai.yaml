@@ -18,7 +18,7 @@
         default: swift://f8a5dbc8033343aea820c139245afe13/BDA/test/test-set-images.tar.gz
         
     parameters:  
-    - default: 20
+     - default: 20
       description: Epochs
       name: Minibatch size
       pass-as: --epochs {v}
@@ -30,19 +30,19 @@
       pass-as: --workers {v}
       type: integer
       
-    - default: /tmp/
+     - default: /tmp/
       description: Input Path to dataset
       name: train path 
       pass-as: --data_path {v}
       type: string
       
-    - default: /valohai/outputs/
+     - default: /valohai/outputs/
       description: Log output
       name:  Log output
       pass-as: --log_path {v}
       type: string
       
-    - default: /valohai/outputs/
+     - default: /valohai/outputs/
       description: Output Path 
       name: save path
       pass-as: --saved_path {v}
