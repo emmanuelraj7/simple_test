@@ -39,22 +39,22 @@ Python argparse example:
 #Define Argparse: 
 
 import argparse
+
 def get_args():
-parser = argparse.ArgumentParser("Add parser")
-parser.add_argument("--data_path", type=str, default="/valohai/inputs/")
-parser.add_argument("--saved_path", type=str, default="/valohai/outputs/")
-parser.add_argument("--log_path", type=str, default="/valohai/outputs")
-parser.add_argument("--epochs", type=int, default=20)
-parser.add_argument("--workers", type=int, default=4)
-args = parser.parse_args()
-return args
+    parser = argparse.ArgumentParser("Add parser")
+    parser.add_argument("--data_path", type=str, default="/valohai/inputs/")
+    parser.add_argument("--saved_path", type=str, default="/valohai/outputs/")
+    parser.add_argument("--log_path", type=str, default="/valohai/outputs")
+    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--workers", type=int, default=4)
+    args = parser.parse_args()
+    return args
 
 #Using parser: 
 opt = get_args()
 
 datapath = opt.data_path
-logdir = os.path.join(opt.log_path, "logs",
-"dvc-simple-"+datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
+logdir=os.path.join(opt.log_path,"logs","dvc-simple-"+datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S'))
 
 epochs = opt.epochs
 workers = opt.workers
