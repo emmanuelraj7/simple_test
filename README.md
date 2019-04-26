@@ -36,7 +36,7 @@ Python argparse example:
 
 ```css 
 
-# Define Argparse: 
+#Define Argparse: 
 
 import argparse
 def get_args():
@@ -49,6 +49,7 @@ parser.add_argument("--workers", type=int, default=4)
 args = parser.parse_args()
 return args
 
+#Using parser: 
 opt = get_args()
 
 datapath = opt.data_path
@@ -64,11 +65,11 @@ Then, we can **parse** the arguments from outside to run our Python script with 
 
 > python keras-dvc-cnn-simple.py --data_path /tmp/ --log_path /tmp/ --epochs 20 --workers 10
 
-By using Python argParse, you dont need to modify your code whenever you want to change the parameters like epochs, or change the dataset path or change the workers number.
+* By using Python argParse, you dont need to modify your code whenever you want to change the parameters like epochs, or change the dataset path or change the workers number.
 
-Also using ArgParse to interact with valohai.yaml. The **parameters** section in valohai.yaml is exactly your **Python argparse**. 
+* Also using ArgParse to interact with valohai.yaml. The **parameters** section in valohai.yaml is exactly your **Python argparse**. 
 
-You can check my **valohai.yaml** and _**keras-dvc-cnn-simple.py**_ file to know how it works. For example in my valohai.yaml file I defined:
+* You can check my **valohai.yaml** and _**keras-dvc-cnn-simple.py**_ file to know how it works. For example in my valohai.yaml file I defined:
 
 ```
 parameters:  
@@ -94,7 +95,7 @@ type: string
 
 The **"pass-as: --epochs {v} "** in the valohai.yaml file is the **"parser.add_argument("--epochs", type=int, default=20)" ** in _**keras-dvc-cnn-simple.py**_ file .
 
-##Note: 
+## Note: 
 
 * The _/valohai/inputs/_ folder is read- only, you can not unzip there.
 * Our download dataset will not locate exactly in _/valohai/inputs/_ but it will be downloaded in seperated folder which the folder name is the **Name** you define in **valohai.yaml** file. See **inputs:** section in **valohai.yaml** file. 
