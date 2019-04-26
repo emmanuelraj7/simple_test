@@ -7,7 +7,7 @@
       - tar -xzf /valohai/inputs/train/train-set-images.tar.gz -C /tmp/train/
       - tar -zxf /valohai/inputs/test/test-set-images.tar.gz -C /tmp/test/
       - tar -zxf /valohai/inputs/validation/validation-set-images.tar.gz -C /tmp/validation/
-      - python keras-dvc-cnn-simple.py 
+      - python keras-dvc-cnn-simple.py {parameters}
     
     inputs:
       - name: train
