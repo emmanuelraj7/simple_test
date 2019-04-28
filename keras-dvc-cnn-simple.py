@@ -193,5 +193,5 @@ history = model.fit_generator(train_generator,
 
 fname = "dvc-small-cnn.h5"
 print('Saving model to', fname)
-model.save(opt.saved_path + os.sep + fname)
+model.save(opt.saved_path + fname)
 
