@@ -34,7 +34,7 @@ import numpy as np
 def get_args():
     parser = argparse.ArgumentParser("Add parser")
     parser.add_argument("--data_path", type=str, default="/valohai/inputs/")
-    parser.add_argument("--saved_path", type=str, default="/valohai/outputs/")
+    parser.add_argument("--saved_path", type=str, default="/valohai/outputs")
     parser.add_argument("--log_path", type=str, default="/valohai/outputs")
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--workers", type=int, default=4)
@@ -193,5 +193,5 @@ history = model.fit_generator(train_generator,
 
 fname = "dvc-small-cnn.h5"
 print('Saving model to', fname)
-model.save(fname)
+model.save(opt.saved_path + os.sep + fname)
 
